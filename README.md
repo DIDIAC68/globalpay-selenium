@@ -34,17 +34,13 @@ Google Chrome instalado (compatível com o ChromeDriver)
 
 Instalar dependências via pip:
 
-bash
-Copiar
-Editar
 pip install selenium webdriver-manager
+
 Estrutura de arquivos
-bash
-Copiar
-Editar
+
 /globalpay-selenium
 │
-├── main.py                  # Script principal com a automação Selenium
+├── globalpay.py                  # Script principal com a automação Selenium
 ├── cards.txt                # Arquivo texto com cartões para teste (formato: número|mês|ano|cvv)
 ├── bins.csv                 # Arquivo CSV contendo dados dos BINs dos cartões
 ├── README.md                # Este arquivo
@@ -60,10 +56,7 @@ bins.csv: Inclua os dados dos BINs para obter informações adicionais no script
 
 Execute o script principal:
 
-bash
-Copiar
-Editar
-python main.py
+python globalpay.py
 O script vai abrir o navegador Chrome, navegar para o site de pagamento, preencher o formulário com os dados do cartão e imprimir no terminal o status (aprovado, reprovado e mensagens detalhadas).
 
 Observações importantes
@@ -76,8 +69,5 @@ O arquivo cards.txt deve estar no caminho configurado ou modifique no script.
 Uso responsável: evite testes com cartões reais não autorizados.
 
 Exemplo de saída
-plaintext
-Copiar
-Editar
 [ℹ️] BIN Info: VISA Credit 16 digits US BANK
 Reprovada ➔ 1234567890123456|07|2025|123|VISA Credit 16 digits US BANK ➔ Invalid card, please try again ➔ @DIDIAC68
