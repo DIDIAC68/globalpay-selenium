@@ -86,15 +86,15 @@ def test_card(card_number, expiry_month, expiry_year, cvv):
         try:
             error_message = wait.until(EC.presence_of_element_located((By.CLASS_NAME, error_message_xpath)))
             if "Invalid card, please try again" in error_message.text:
-                print(f"Reprovada ➔ {card_number}|{expiry_month}|{expiry_year}|{cvv}|{bin_info} ➔ Invalid card, please try again ➔ @DIDIAC68")
+                print(f" ➔ {card_number}|{expiry_month}|{expiry_year}|{cvv}|{bin_info} ➔ Invalid card, please try again ➔ @DIDIAC68")
             elif "Invalid CVV, please try again" in error_message.text:
-                print(f"Aprovada ➔ {card_number}|{expiry_month}|{expiry_year}|{cvv}|{bin_info} ➔ Invalid CVV, please try again ➔ @DIDIAC68")
+                print(f" ➔ {card_number}|{expiry_month}|{expiry_year}|{cvv}|{bin_info} ➔ Invalid CVV, please try again ➔ @DIDIAC68")
             elif "Card is expired" in error_message.text:
-                print(f"Aprovada ➔ {card_number}|{expiry_month}|{expiry_year}|{cvv}|{bin_info} ➔ Card is expired ➔ @DIDIAC68")
+                print(f" ➔ {card_number}|{expiry_month}|{expiry_year}|{cvv}|{bin_info} ➔ Card is expired ➔ @DIDIAC68")
             elif "SEC VIOLATION" in error_message.text:
-                print(f"Aprovada ➔ {card_number}|{expiry_month}|{expiry_year}|{cvv}|{bin_info} ➔ SEC VIOLATION (63) ➔ @DIDIAC68")
+                print(f" ➔ {card_number}|{expiry_month}|{expiry_year}|{cvv}|{bin_info} ➔ SEC VIOLATION (63) ➔ @DIDIAC68")
             else:
-                print(f"Reprovada ➔ {card_number}|{expiry_month}|{expiry_year}|{cvv}|{bin_info}| ➔ {error_message.text} ➔ @DIDIAC68")
+                print(f" ➔ {card_number}|{expiry_month}|{expiry_year}|{cvv}|{bin_info}| ➔ {error_message.text} ➔ @DIDIAC68")
         except:
             print("Nenhum erro encontrado.")
         time.sleep(3)
